@@ -70,9 +70,9 @@ The test results of different GLLMs on the CEM-QA test dataset are shown below. 
 
 # 4. Reuse of the CEM-EKB with two optional versions
 
-![Two optional versions of CEM-EKB](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Three%20optional%20versions%20of%20CPM-KG.png)
+![Two optional versions of CEM-EKB](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Two%20optional%20versions%20of%20CEM-EKB.png)
 
-The CEM-EKB is available through this link (https://drive.google.com/drive/folders/1-Ok_qjl5ADD8nlCSyEghupGqBz3TIk1W?usp=sharing).
+The CEM-EKB is available through this link (https://drive.google.com/drive/folders/1HL8hW_Co47fOPF_PnIogpBSo-REPQ1jc?usp=sharing).
 
 
 # 5. Reuse of the CEM-QA test and training dataset
