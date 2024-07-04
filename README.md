@@ -68,48 +68,32 @@ The test results of different GLLMs on the CEM-QA test dataset are shown below. 
 | Original GPT-3.5-turbo | OpenAI | 0.358 | 0.400 | 0.334 | 0.304 | 0.421 | 0.345 | 0.362 | 0.389 | 24 |
 | Original ERNIE-Bot-turbo | Baidu | 0.357 | 0.402 | 0.309 | 0.324 | 0.382 | 0.370 | 0.365 | 0.414 | 25 |
 
-# 4. Reuse of the multimodal CPM-KG 
+# 4. Reuse of the CEM-EKB with two optional versions
 
-## 4.1 Three optional versions of CPM-KG
+![Two optional versions of CEM-EKB](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Three%20optional%20versions%20of%20CPM-KG.png)
 
-![Three optional versions of CPM-KG](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Three%20optional%20versions%20of%20CPM-KG.png)
-
-The CPM-KG is available through this link (https://drive.google.com/drive/folders/1-Ok_qjl5ADD8nlCSyEghupGqBz3TIk1W?usp=sharing).
-
-## 4.2 Instance layer details of CPM-KG
-Developing the instance layer of the CPM-KG involves building the three-level architecture of CPM knowledge fields, collecting CPM-related documents, and processing multimodal document content with text and image data.
+The CEM-EKB is available through this link (https://drive.google.com/drive/folders/1-Ok_qjl5ADD8nlCSyEghupGqBz3TIk1W?usp=sharing).
 
 
-![Figure S1](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Figure%20S1%2043%20triples%20of%20%5Bknowledge%20field%2C%20has%20subfield%20of%2C%20knowledge%20field%5D.png)
-↑↑↑43 triples of [knowledge field, has subfield of, knowledge field]
+# 5. Reuse of the CEM-QA test and training dataset
+
+The CEM-QA test dataset containing 5,050 questions is manually annotated with four features, including the question source, 40 third-tier subdomains, single-answer multiple-choice question (SAMCQ) or multiple-answer multiple-choice question (MAMCQ), and calculation question or non-calculation question.
 
 
-![Figure S2](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Figure%20S2%20242%20triples%20of%20%5Btertiary%20knowledge%20field%2C%20involves%2C%20document%5D.png)
-↑↑↑242 triples of [tertiary knowledge field, involves, document]
+![CEM-QA test dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20test%20dataset%20in%20the%20Hugging%20Face%20repository.png)
+↑↑↑The CEM-QA test dataset in the Hugging Face repository
 
 
-![Figure S3](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Figure%20S3%201%2C375%20triples%20of%20%5Bdocument%2C%20contains%2C%20document%20content%5D.png)
-↑↑↑1,375 triples of [document, contains, document content]
+![CEM-QA training dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20training%20dataset%20in%20the%20Hugging%20Face%20repository.png)
+↑↑↑The CEM-QA training dataset in the Hugging Face repository
 
-# 5. Reuse of the CPM-QA testing set
+More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM)( https://huggingface.co/datasets/AnonymousSite/QA_training_dataset_for_CEM).
 
-The CPM-QA testing set containing 2,435 questions is manually tagged with four characteristics. The characteristics are the paper’s level and year, knowledge subfields, single- or multiple-answer questions, and questions with or without images.
-
-
-![CPM-QA testing set in huggingface](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/CPM-QA%20testing%20set%20in%20huggingface.png)
-↑↑↑The CPM-QA testing set in huggingface
-
-
-![The annotations of CPM questions characteristics](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/The%20annotations%20of%20CPM%20questions%E2%80%99%20characteristics.png)
-↑↑↑The annotations of CPM questions’ characteristics
-
-More information about the dataset can be found through this link (https://huggingface.co/datasets/AnonymousSite/QA_dataset_for_CPM).
-
-# 6. Reuse of the codes for running GLMs with and without CPM-KG
+# 6. Reuse of the codes for running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
  
 ## 6.1 Environment set
 
-All codes are developed on Python 3.9, and the IDE adopted is PyCharm (Professional version). The codes also support GPU computing for higher speed; the Navida CUDA we adopted is V10.0.130. The GIS platform is Arcgis Pro 2.3, and its license is necessary. 
+All codes are developed on Python 3.10, and the IDE adopted is PyCharm (Professional version). The codes also support GPU computing for higher speed; the Navida CUDA we adopted is V10.0.130. The GIS platform is Arcgis Pro 2.3, and its license is necessary. 
 
 aiohttp==3.9.0
 
@@ -139,18 +123,26 @@ beautifulsoup4==4.12.2
 
 ......
 
-Please refer to the supplementary materials for the complete requirement file.(https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Codes/Codes%20for%20running%20GLMs%20integrated%20with%20CPM-KG/requirements.txt)
+Please refer to the supplementary materials for the complete requirement file.()
 
 Before submitting these codes to Github, all of them have been tested to be well-performed (as shown in the images). Even so, we are not able to guarantee their operation in other computing environments due to the differences in the Python version, computer operating system, and adopted hardware.
 
-## 6.2 Codes for testing the GLMs
+## 6.2 Codes for testing the GLLMs
 
-Closed-source GLMs are API-only, while open-source GLMs over 24GB also use APIs to avoid high-end GPU costs. The open-source GLMs under 24GB are deployed directly on the AutoDL Cloud server with GTX 4090 GPUs.
-
-
-![Codes for original GLMs](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Codes%20for%20running%20original%20GLMs.png)
-↑↑↑Codes for testing original GLMs
+Closed-source GLLMs are API-only, and open-source GLLMs are deployed directly on the AutoDL Cloud server.
 
 
-![Codes for GLMs with CPM-KG](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Codes%20for%20running%20GLMs%20integrated%20with%20CPM-KG.png)
-↑↑↑Codes for testing GLMs integrating CPM-KG
+![Codes for running original GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20original%20GLLMs.png)
+↑↑↑Codes for testing original GLLMs
+
+
+![Codes for running CEM knowledge-incorporated GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20CEM%20knowledge-incorporated%20GLLMs.png)
+↑↑↑Codes for testing CEM knowledge-incorporated GLLMs
+
+
+![Codes for running CEM knowledge-incorporated fine-tuned GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20CEM%20knowledge-incorporated%20fine-tuned%20GLLMs.png)
+↑↑↑Codes for testing CEM knowledge-incorporated fine-tuned GLLMs
+
+
+![Codes for deploying and running CEM-QA prototype](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20deploying%20and%20running%20the%20CEM-QA%20%20prototype.png)
+↑↑↑Codes for deploying and running CEM-QA prototype
