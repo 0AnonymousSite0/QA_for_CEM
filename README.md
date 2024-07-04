@@ -123,7 +123,7 @@ beautifulsoup4==4.12.2
 
 ......
 
-Please refer to the supplementary materials for the complete requirement file.()
+Please refer to the supplementary materials for the complete requirement file.(https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Codes/Codes%20for%20running%20CEM%20knowledge-incorporated%20GLLMs/requirements.txt)
 
 Before submitting these codes to Github, all of them have been tested to be well-performed (as shown in the images). Even so, we are not able to guarantee their operation in other computing environments due to the differences in the Python version, computer operating system, and adopted hardware.
 
