@@ -32,32 +32,41 @@
 
 The table below shows all supplemental materials. All sheets in Tables S1, S2, and S3 are arranged in the order shown in this table.
 
-![supplemental materials](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/Inventory%20of%20supplemental%20materials.png)
+![Inventory of supplemental materials](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Inventory%20of%20supplemental%20materials.png)
 
-All supplemental materials are provided in Github repository (https://huggingface.co/datasets/AnonymousSite/QA_dataset_for_CPM). Besides the Github repository, the CPM-QA dataset is also shared in Hugging Face repository (https://github.com/0AnonymousSite0/QA_for_CPM).
+All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test and training datasets are also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM)(https://huggingface.co/datasets/AnonymousSite/QA_training_dataset_for_CEM).
 
-# 3. GLM Leaderboard for CPM-QA
+# 3. GLLM Leaderboard for CEM-QA
 
-The test results of different GLMs on the QA dataset for Chinese Construction Project Management are shown below. Welcome global scholars to test their GLM works on CPM-QA, please see the following specification of reusing the QA dataset.
+The test results of different GLLMs on the CEM-QA test dataset are shown below. Welcome global scholars to test their GLLM works on CEM-QA, please see the following specification of reusing the QA dataset.
 
-| General-purpose large-language models | Publishing institution | Accuracy rate of SAMCQs | Accuracy rate of MAMCQs | Accuracy rate of text-only questions | Accuracy rate of image-embedded questions | Average accuracy rate | Ranking |
-|-----|-----|-----|-----|-----|-----|-----|-----|
-| ERNIE-Bot 4.0 with CPM-KG | Baidu&The authors | 0.773 | 0.568 | 0.701 | 0.224 | 0.682 | 1 |
-| GPT-4-turbo with CPM-KG | OpenAI&The authors | 0.723 | 0.543 | 0.661 | 0.250 | 0.643 | 2 |
-| GPT-4 with CPM-KG | OpenAI&The authors | 0.686 | 0.550 | 0.646 | 0.218 | 0.628 | 3 |
-| ERNIE-Bot 4.0 | Baidu | 0.726 | 0.442 | 0.621 | 0.166 | 0.602 | 4 |
-| ERNIE-Bot with CPM-KG | Baidu&The authors | 0.727 | 0.361 | 0.578 | 0.235 | 0.566 | 5 |
-| GPT-4-turbo | OpenAI | 0.589 | 0.372 | 0.503 | 0.235 | 0.494 | 6 |
-| GPT-3.5-turbo with CPM-KG | OpenAI&The authors | 0.538 | 0.394 | 0.480 | 0.244 | 0.472 | 7 |
-| ERNIE-Bot | Baidu | 0.656 | 0.234 | 0.481 | 0.218 | 0.471 | 8 |
-| GPT-4 | OpenAI | 0.591 | 0.313 | 0.482 | 0.198 | 0.470 | 9 |
-| ChatGLM3-6B with CPM-KG | Tsinghua & Zhipu.AI | 0.497 | 0.319 | 0.424 | 0.238 | 0.418 | 10 |
-| Qianfan-Chinese-Llama-2-7B with CPM-KG | Baidu&The authors | 0.464 | 0.238 | 0.369 | 0.221 | 0.367 | 11 |
-| ChatGLM3-6B | Tsinghua & Zhipu.AI | 0.419 | 0.262 | 0.355 | 0.203 | 0.351 | 12 |
-| GPT-3.5-turbo | OpenAI | 0.427 | 0.237 | 0.346 | 0.174 | 0.342 | 13 |
-| Llama-2-70B-Chat with CPM-KG | MetaAI&The authors | 0.443 | 0.189 | 0.328 | 0.323 | 0.331 | 14 |
-| Llama-2-70B-Chat | MetaAI | 0.335 | 0.137 | 0.247 | 0.235 | 0.249 | 15 |
-| Qianfan-Chinese-Llama-2-7B | Baidu | 0.314 | 0.140 | 0.237 | 0.203 | 0.240 | 16 |
+| General-purpose large language models | Contributors | Average correctness ratio | SD1 | SD2 | SD3 | SD4 | SD5 | SD6 | SD7 | Ranking |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Knowledge-incorporated ERNIE-Bot 4.0 | Baidu & The authors | 0.750 | 0.787 | 0.758 | 0.640 | 0.766 | 0.784 | 0.754 | 0.808 | 1 |
+| Knowledge-incorporated fine-tuned Qwen-14B-Chat | Alibaba & The authors | 0.640 | 0.683 | 0.618 | 0.536 | 0.659 | 0.683 | 0.629 | 0.719 | 2 |
+| Knowledge-incorporated GPT-4 | OpenAI & The authors | 0.633 | 0.672 | 0.611 | 0.431 | 0.694 | 0.695 | 0.694 | 0.678 | 3 |
+| Original ERNIE-Bot 4.0 | Baidu | 0.621 | 0.661 | 0.632 | 0.507 | 0.656 | 0.648 | 0.632 | 0.622 | 4 |
+| Knowledge-incorporated Qwen-14B-Chat | Alibaba & The authors | 0.590 | 0.641 | 0.565 | 0.465 | 0.621 | 0.641 | 0.578 | 0.669 | 5 |
+| Knowledge-incorporated fine-tuned Baichuan2-7B-Chat | Baichuan AI & The authors | 0.532 | 0.568 | 0.701 | 0.224 | 0.682 | 0.682 | 0.682 | 0.682 | 6 |
+| Original Qwen-14B-Chat | Alibaba | 0.526 | 0.583 | 0.512 | 0.393 | 0.565 | 0.548 | 0.521 | 0.594 | 7 |
+| Knowledge-incorporated fine-tuned Qwen-7B-Chat | Alibaba & The authors | 0.525 | 0.574 | 0.538 | 0.410 | 0.567 | 0.575 | 0.514 | 0.597 | 8 |
+| Knowledge-incorporated fine-tuned Baichuan2-13B-Chat | Baichuan AI & The authors | 0.510 | 0.547 | 0.491 | 0.413 | 0.566 | 0.552 | 0.494 | 0.553 | 9 |
+| Knowledge-incorporated fine-tuned GPT-3.5-turbo | OpenAI & The authors | 0.479 | 0.497 | 0.441 | 0.393 | 0.513 | 0.497 | 0.498 | 0.594 | 10 |
+| Original GPT-4 | OpenAI | 0.478 | 0.513 | 0.477 | 0.358 | 0.512 | 0.480 | 0.528 | 0.486 | 11 |
+| Knowledge-incorporated Qwen-7B-Chat | Alibaba & The authors | 0.477 | 0.529 | 0.448 | 0.364 | 0.515 | 0.514 | 0.467 | 0.542 | 12 |
+| Knowledge-incorporated Baichuan2-7B-Chat | Baichuan AI & The authors | 0.454 | 0.484 | 0.474 | 0.366 | 0.495 | 0.474 | 0.417 | 0.489 | 13 |
+| Knowledge-incorporated Baichuan2-13B-Chat | Baichuan AI & The authors | 0.451 | 0.479 | 0.429 | 0.371 | 0.502 | 0.481 | 0.430 | 0.514 | 14 |
+| Knowledge-incorporated fine-tuned ERNIE-Bot-turbo | Baidu & The authors | 0.450 | 0.487 | 0.401 | 0.374 | 0.479 | 0.487 | 0.436 | 0.583 | 15 |
+| Knowledge-incorporated fine-tuned ChatGLM3-6B | Tsinghua & The authors | 0.436 | 0.482 | 0.406 | 0.353 | 0.471 | 0.487 | 0.422 | 0.472 | 16 |
+| Knowledge-incorporated GPT-3.5-turbo | OpenAI & The authors | 0.421 | 0.458 | 0.395 | 0.356 | 0.438 | 0.456 | 0.422 | 0.447 | 17 |
+| Original Qwen-7B-Chat | Alibaba | 0.414 | 0.461 | 0.370 | 0.316 | 0.475 | 0.445 | 0.423 | 0.411 | 18 |
+| Knowledge-incorporated ChatGLM3-6B | Tsinghua & The authors | 0.408 | 0.462 | 0.395 | 0.314 | 0.454 | 0.452 | 0.394 | 0.406 | 19 |
+| Original Baichuan2-13B-Chat | Baichuan AI | 0.406 | 0.443 | 0.408 | 0.323 | 0.447 | 0.443 | 0.378 | 0.456 | 20 |
+| Knowledge-incorporated ERNIE-Bot-turbo | Baidu & The authors | 0.405 | 0.424 | 0.386 | 0.351 | 0.432 | 0.418 | 0.394 | 0.467 | 21 |
+| Original Baichuan2-7B-Chat | Baichuan AI | 0.394 | 0.423 | 0.406 | 0.291 | 0.445 | 0.427 | 0.381 | 0.394 | 22 |
+| Original ChatGLM3-6B | Tsinghua | 0.362| 0.411 | 0.351 | 0.298 | 0.394 | 0.403 | 0.343 | 0.339 | 23 |
+| Original GPT-3.5-turbo | OpenAI | 0.358 | 0.400 | 0.334 | 0.304 | 0.421 | 0.345 | 0.362 | 0.389 | 24 |
+| Original ERNIE-Bot-turbo | Baidu | 0.357 | 0.402 | 0.309 | 0.324 | 0.382 | 0.370 | 0.365 | 0.414 | 25 |
 
 # 4. Reuse of the multimodal CPM-KG 
 
