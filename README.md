@@ -2,21 +2,29 @@
 
 ## !!! As the paper is under review, all materials in this repository currently are not allowed to be re-used by anyone until this announcement is deleted.
 
-# 0. Videos of running original GLLMs, CEM knowledge-incorporated GLLMs, and CEM knowledge-incorporated fine-tuned GLLMs
-![GIF for running video of original GLMs.gif](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/GIF%20for%20running%20video%20of%20original%20GLMs.gif)
+# 0. Videos of running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
+![GIF for running video of original GLLMs.gif](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20original%20GLLMs.gif)
 
-↑↑↑Multiple original GLMs simultaneously answering the CPM-related questions
+↑↑↑Multiple original GLLMs simultaneously answering the CEM-related questions
 
-![GIF for running video of GLMs with CPM-KG](https://github.com/0AnonymousSite0/QA_for_CPM/blob/main/Images%20for%20Readme/GIF%20for%20running%20video%20of%20GLMs%20with%20%20CPM-KG.gif)
+![GIF for running video of CEM knowledge-incorporated GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM%20knowledge-incorporated%20GLLMs.gif)
 
-↑↑↑Multiple GLMs with CPM-KG simultaneously answering the CPM-related questions
+↑↑↑Multiple CEM knowledge-incorporated GLLMs simultaneously answering the CEM-related questions
+
+![GIF for running video of CEM knowledge-incorporated fine-tuned GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM%20knowledge-incorporated%20fine-tuned%20GLLMs.gif)
+
+↑↑↑Multiple CEM knowledge-incorporated fine-tuned GLLMs simultaneously answering the CEM-related questions
+
+![GIF for running video of CEM-QA prototype](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM-QA%20prototype.gif)
+
+↑↑↑CEM-QA prototype answering the CEM-related question
 
 
 # 1. General introduction of this repository
 
-1.1 This repository aims at providing the codes and data regarding the paper entitled “……” for the public, and it is developed by University of XXX in UK,  The University of XX in Hong Kong SAR, and XXX University in China.
+1.1 This repository aims at providing the codes and data regarding the paper entitled “……” for the public, and it is developed by University of XXX in UK and XXX University in China.
 
-1.2 We greatly appreciate the selfless spirits of these voluntary contributors of a series of open python libraries, including langchain, llamaindex, meta's llama2, openai, chatglm, numpy, and so on. Our work stands on the shoulders of these giants.
+1.2 We greatly appreciate the selfless spirits of these voluntary contributors of a series of open python libraries, including langchain, llamaindex, openai, chatglm, numpy, and so on. Our work stands on the shoulders of these giants.
 
 1.3 As for anything regarding the copyright, please refer to the MIT License or contact the authors.
 
