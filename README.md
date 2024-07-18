@@ -1,4 +1,4 @@
-# Integrating domain-specific knowledge base and zero-shot fine-tuned general-purpose large language models for question-answering in construction engineering management
+# Integrating domain-specific knowledge and fine-tuned general-purpose large language models for question-answering in construction engineering management
 
 ## !!! As the paper is under review, all materials in this repository currently are not allowed to be re-used by anyone until this announcement is deleted.
 
