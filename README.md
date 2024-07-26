@@ -30,11 +30,11 @@
 
 # 2. Summary of supplemental materials in this repository
 
-The table below shows all supplemental materials. All sheets in Tables S1, S2, and S3 are arranged in the order shown in this table.
+The table below shows all supplemental materials. All sheets in Tables S1, S2, S3, and S4 are arranged in the order shown in this table.
 
 ![Inventory of supplemental materials](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Inventory%20of%20supplemental%20materials.png)
 
-All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test and training datasets are also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM)(https://huggingface.co/datasets/AnonymousSite/QA_training_dataset_for_CEM).
+All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test dataset is also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM).
 
 # 3. GLLM Leaderboard for CEM-QA
 
@@ -42,31 +42,31 @@ The test results of different GLLMs on the CEM-QA test dataset are shown below. 
 
 | General-purpose large language models | Contributors | Average correctness ratio | SD1 | SD2 | SD3 | SD4 | SD5 | SD6 | SD7 | Ranking |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Knowledge-incorporated ERNIE-Bot 4.0 | Baidu & The authors | 0.750 | 0.787 | 0.758 | 0.640 | 0.766 | 0.784 | 0.754 | 0.808 | 1 |
-| Knowledge-incorporated fine-tuned Qwen-14B-Chat | Alibaba & The authors | 0.640 | 0.683 | 0.618 | 0.536 | 0.659 | 0.683 | 0.629 | 0.719 | 2 |
-| Knowledge-incorporated GPT-4 | OpenAI & The authors | 0.633 | 0.672 | 0.611 | 0.431 | 0.694 | 0.695 | 0.694 | 0.678 | 3 |
-| Original ERNIE-Bot 4.0 | Baidu | 0.621 | 0.661 | 0.632 | 0.507 | 0.656 | 0.648 | 0.632 | 0.622 | 4 |
-| Knowledge-incorporated Qwen-14B-Chat | Alibaba & The authors | 0.590 | 0.641 | 0.565 | 0.465 | 0.621 | 0.641 | 0.578 | 0.669 | 5 |
-| Knowledge-incorporated fine-tuned Baichuan2-7B-Chat | Baichuan AI & The authors | 0.532 | 0.568 | 0.701 | 0.224 | 0.682 | 0.682 | 0.682 | 0.682 | 6 |
-| Original Qwen-14B-Chat | Alibaba | 0.526 | 0.583 | 0.512 | 0.393 | 0.565 | 0.548 | 0.521 | 0.594 | 7 |
-| Knowledge-incorporated fine-tuned Qwen-7B-Chat | Alibaba & The authors | 0.525 | 0.574 | 0.538 | 0.410 | 0.567 | 0.575 | 0.514 | 0.597 | 8 |
-| Knowledge-incorporated fine-tuned Baichuan2-13B-Chat | Baichuan AI & The authors | 0.510 | 0.547 | 0.491 | 0.413 | 0.566 | 0.552 | 0.494 | 0.553 | 9 |
-| Knowledge-incorporated fine-tuned GPT-3.5-turbo | OpenAI & The authors | 0.479 | 0.497 | 0.441 | 0.393 | 0.513 | 0.497 | 0.498 | 0.594 | 10 |
-| Original GPT-4 | OpenAI | 0.478 | 0.513 | 0.477 | 0.358 | 0.512 | 0.480 | 0.528 | 0.486 | 11 |
-| Knowledge-incorporated Qwen-7B-Chat | Alibaba & The authors | 0.477 | 0.529 | 0.448 | 0.364 | 0.515 | 0.514 | 0.467 | 0.542 | 12 |
-| Knowledge-incorporated Baichuan2-7B-Chat | Baichuan AI & The authors | 0.454 | 0.484 | 0.474 | 0.366 | 0.495 | 0.474 | 0.417 | 0.489 | 13 |
-| Knowledge-incorporated Baichuan2-13B-Chat | Baichuan AI & The authors | 0.451 | 0.479 | 0.429 | 0.371 | 0.502 | 0.481 | 0.430 | 0.514 | 14 |
-| Knowledge-incorporated fine-tuned ERNIE-Bot-turbo | Baidu & The authors | 0.450 | 0.487 | 0.401 | 0.374 | 0.479 | 0.487 | 0.436 | 0.583 | 15 |
-| Knowledge-incorporated fine-tuned ChatGLM3-6B | Tsinghua & The authors | 0.436 | 0.482 | 0.406 | 0.353 | 0.471 | 0.487 | 0.422 | 0.472 | 16 |
-| Knowledge-incorporated GPT-3.5-turbo | OpenAI & The authors | 0.421 | 0.458 | 0.395 | 0.356 | 0.438 | 0.456 | 0.422 | 0.447 | 17 |
-| Original Qwen-7B-Chat | Alibaba | 0.414 | 0.461 | 0.370 | 0.316 | 0.475 | 0.445 | 0.423 | 0.411 | 18 |
-| Knowledge-incorporated ChatGLM3-6B | Tsinghua & The authors | 0.408 | 0.462 | 0.395 | 0.314 | 0.454 | 0.452 | 0.394 | 0.406 | 19 |
-| Original Baichuan2-13B-Chat | Baichuan AI | 0.406 | 0.443 | 0.408 | 0.323 | 0.447 | 0.443 | 0.378 | 0.456 | 20 |
-| Knowledge-incorporated ERNIE-Bot-turbo | Baidu & The authors | 0.405 | 0.424 | 0.386 | 0.351 | 0.432 | 0.418 | 0.394 | 0.467 | 21 |
-| Original Baichuan2-7B-Chat | Baichuan AI | 0.394 | 0.423 | 0.406 | 0.291 | 0.445 | 0.427 | 0.381 | 0.394 | 22 |
-| Original ChatGLM3-6B | Tsinghua | 0.362| 0.411 | 0.351 | 0.298 | 0.394 | 0.403 | 0.343 | 0.339 | 23 |
-| Original GPT-3.5-turbo | OpenAI | 0.358 | 0.400 | 0.334 | 0.304 | 0.421 | 0.345 | 0.362 | 0.389 | 24 |
-| Original ERNIE-Bot-turbo | Baidu | 0.357 | 0.402 | 0.309 | 0.324 | 0.382 | 0.370 | 0.365 | 0.414 | 25 |
+| Knowledge-incorporated ERNIE-Bot 4.0 | Baidu & The authors | 0.734 | 0.787 | 0.758 | 0.640 | 0.766 | 0.784 | 0.754 | 0.808 | 1 |
+| Knowledge-incorporated fine-tuned Qwen-14B-Chat | Alibaba & The authors | 0.631 | 0.683 | 0.618 | 0.536 | 0.659 | 0.683 | 0.629 | 0.719 | 2 |
+| Knowledge-incorporated GPT-4 | OpenAI & The authors | 0.620 | 0.672 | 0.611 | 0.431 | 0.694 | 0.695 | 0.694 | 0.678 | 3 |
+| Original ERNIE-Bot 4.0 | Baidu | 0.608 | 0.661 | 0.632 | 0.507 | 0.656 | 0.648 | 0.632 | 0.622 | 4 |
+| Knowledge-incorporated Qwen-14B-Chat | Alibaba & The authors | 0.583 | 0.641 | 0.565 | 0.465 | 0.621 | 0.641 | 0.578 | 0.669 | 5 |
+| Original Qwen-14B-Chat | Alibaba | 0.522 | 0.583 | 0.512 | 0.393 | 0.565 | 0.548 | 0.521 | 0.594 | 6 |
+| Knowledge-incorporated fine-tuned Baichuan2-7B-Chat | Baichuan AI & The authors | 0.517 | 0.568 | 0.701 | 0.224 | 0.682 | 0.682 | 0.682 | 0.682 | 7 |
+| Knowledge-incorporated fine-tuned Qwen-7B-Chat | Alibaba & The authors | 0.517 | 0.574 | 0.538 | 0.410 | 0.567 | 0.575 | 0.514 | 0.597 | 8 |
+| Knowledge-incorporated fine-tuned Baichuan2-13B-Chat | Baichuan AI & The authors | 0.497 | 0.547 | 0.491 | 0.413 | 0.566 | 0.552 | 0.494 | 0.553 | 9 |
+| Original GPT-4 | OpenAI | 0.475 | 0.513 | 0.477 | 0.358 | 0.512 | 0.480 | 0.528 | 0.486 | 10 |
+| Knowledge-incorporated Qwen-7B-Chat | Alibaba & The authors | 0.468 | 0.529 | 0.448 | 0.364 | 0.515 | 0.514 | 0.467 | 0.542 | 11 |
+| Knowledge-incorporated fine-tuned GPT-3.5-turbo | OpenAI & The authors | 0.468 | 0.497 | 0.441 | 0.393 | 0.513 | 0.497 | 0.498 | 0.594 | 12 |
+| Knowledge-incorporated Baichuan2-7B-Chat | Baichuan AI & The authors | 0.444 | 0.484 | 0.474 | 0.366 | 0.495 | 0.474 | 0.417 | 0.489 | 13 |
+| Knowledge-incorporated Baichuan2-13B-Chat | Baichuan AI & The authors | 0.441 | 0.479 | 0.429 | 0.371 | 0.502 | 0.481 | 0.430 | 0.514 | 14 |
+| Knowledge-incorporated fine-tuned ERNIE-Bot-turbo | Baidu & The authors | 0.427 | 0.487 | 0.401 | 0.374 | 0.479 | 0.487 | 0.436 | 0.583 | 15 |
+| Knowledge-incorporated fine-tuned ChatGLM3-6B | Tsinghua & The authors | 0.425 | 0.482 | 0.406 | 0.353 | 0.471 | 0.487 | 0.422 | 0.472 | 16 |
+| Original Qwen-7B-Chat | Alibaba | 0.410 | 0.461 | 0.370 | 0.316 | 0.475 | 0.445 | 0.423 | 0.411 | 17 |
+| Knowledge-incorporated GPT-3.5-turbo | OpenAI & The authors | 0.407 | 0.458 | 0.395 | 0.356 | 0.438 | 0.456 | 0.422 | 0.447 | 18 |
+| Knowledge-incorporated ChatGLM3-6B | Tsinghua & The authors | 0.399 | 0.462 | 0.395 | 0.314 | 0.454 | 0.452 | 0.394 | 0.406 | 19 |
+| Original Baichuan2-13B-Chat | Baichuan AI | 0.393 | 0.443 | 0.408 | 0.323 | 0.447 | 0.443 | 0.378 | 0.456 | 20 |
+| Knowledge-incorporated ERNIE-Bot-turbo | Baidu & The authors | 0.392 | 0.424 | 0.386 | 0.351 | 0.432 | 0.418 | 0.394 | 0.467 | 21 |
+| Original Baichuan2-7B-Chat | Baichuan AI | 0.385 | 0.423 | 0.406 | 0.291 | 0.445 | 0.427 | 0.381 | 0.394 | 22 |
+| Original ChatGLM3-6B | Tsinghua | 0.353| 0.411 | 0.351 | 0.298 | 0.394 | 0.403 | 0.343 | 0.339 | 23 |
+| Original ERNIE-Bot-turbo | Baidu | 0.345 | 0.402 | 0.309 | 0.324 | 0.382 | 0.370 | 0.365 | 0.414 | 24 |
+| Original GPT-3.5-turbo | OpenAI | 0.340 | 0.400 | 0.334 | 0.304 | 0.421 | 0.345 | 0.362 | 0.389 | 25 |
 
 # 4. Reuse of the CEM-EKB with two optional versions
 
@@ -75,7 +75,7 @@ The test results of different GLLMs on the CEM-QA test dataset are shown below. 
 The CEM-EKB is available through this link (https://drive.google.com/drive/folders/1HL8hW_Co47fOPF_PnIogpBSo-REPQ1jc?usp=sharing).
 
 
-# 5. Reuse of the CEM-QA test and training dataset
+# 5. Reuse of the CEM-QA test and training datasets
 
 The CEM-QA test dataset containing 5,050 questions is manually annotated with four features, including the question source, 40 third-tier subdomains, single-answer multiple-choice question (SAMCQ) or multiple-answer multiple-choice question (MAMCQ), and calculation question or non-calculation question.
 
