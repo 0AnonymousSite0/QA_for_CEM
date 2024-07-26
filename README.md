@@ -77,7 +77,7 @@ The CEM-EKB is available through this link (https://drive.google.com/drive/folde
 
 # 5. Reuse of the CEM-QA test and training datasets
 
-The CEM-QA test dataset containing 5,050 questions is manually annotated with four features, including the question source, 40 third-tier subdomains, single-answer multiple-choice question (SAMCQ) or multiple-answer multiple-choice question (MAMCQ), and calculation question or non-calculation question.
+The CEM-QA test dataset containing 5,050 questions is manually annotated with four features, including the question source, single-answer multiple-choice question (SAMCQ) or multiple-answer multiple-choice question (MAMCQ), and calculation question or non-calculation question.
 
 
 ![CEM-QA test dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20test%20dataset%20in%20the%20Hugging%20Face%20repository.png)
