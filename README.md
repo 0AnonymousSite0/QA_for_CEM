@@ -19,6 +19,9 @@
 
 ↑↑↑CEM-QA prototype answering the CEM-related question
 
+![GIF for testing response time of GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20testing%20response%20time%20of%20GLLMs.gif)
+
+↑↑↑GLLMs' response time of answering CEM-related questions
 
 # 1. General introduction of this repository
 
