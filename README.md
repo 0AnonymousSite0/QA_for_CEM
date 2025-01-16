@@ -84,7 +84,7 @@ The CEM-QA test datasets contain 5,050 multiple-choice questions (MCQs) and 100 
 
 
 ![CEM-QA test dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20test%20dataset%20in%20the%20Hugging%20Face%20repository.png)
-![CBQ dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CBQ%20dataset%20in%20the%20Hugging%20Face%20repository.tif)
+![CBQ dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CBQ%20dataset%20in%20the%20Hugging%20Face%20repository.jpg)
 ↑↑↑The CEM-QA test datasets in the Hugging Face repository
 
 
