@@ -87,7 +87,7 @@ The CEM-QA test dataset containing 5,050 questions is manually annotated with fo
 ![CEM-QA training dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20training%20dataset%20in%20the%20Hugging%20Face%20repository.png)
 ↑↑↑The CEM-QA training dataset in the Hugging Face repository
 
-More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM)( https://huggingface.co/datasets/AnonymousSite/QA_training_dataset_for_CEM).
+More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM),(https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs) and (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs).
 
 # 6. Reuse of the codes for running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
  
