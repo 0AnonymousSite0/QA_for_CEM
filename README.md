@@ -150,3 +150,4 @@ Closed-source GLLMs are API-only, and open-source GLLMs are deployed directly on
 
 ![Codes for deploying and running CEM-QA prototype](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20deploying%20and%20running%20the%20CEM-QA%20prototype.png)
 ↑↑↑Codes for deploying and running CEM-QA prototype
+Codes for deploying and running CEM-QA prototype is available through this link (https://drive.google.com/drive/folders/14nH5eiV4I01HRMh_dhUmWNeZ4DuQXuXd).
