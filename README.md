@@ -1,206 +1,148 @@
-![](img/logo-long-chatchat-trans-v2.png)
+# Integrating domain-specific knowledge and fine-tuned general-purpose large language models for question-answering in construction engineering management
 
-🌍 [READ THIS IN ENGLISH](README_en.md)
-🌍 [日本語で読む](README_ja.md)
+## !!! As the paper is under review, all materials in this repository currently are not allowed to be re-used by anyone until this announcement is deleted.
 
-📃 **LangChain-Chatchat** (原 Langchain-ChatGLM)
+# 0. Videos of running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
+![GIF for running video of original GLLMs.gif](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20original%20GLLMs.gif)
 
-基于 ChatGLM 等大语言模型与 Langchain 等应用框架实现，开源、可离线部署的检索增强生成(RAG)大模型知识库项目。
+↑↑↑Multiple original GLLMs simultaneously answering the CEM-related questions
 
-### ⚠️ 重要提示
+![GIF for running video of CEM knowledge-incorporated GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM%20knowledge-incorporated%20GLLMs.gif)
 
-`0.2.10`将会是`0.2.x`系列的最后一个版本，`0.2.x`系列版本将会停止更新和技术支持，全力研发具有更强应用性的 `Langchain-Chatchat 0.3.x`。
-`0.2.10` 的后续 bug 修复将会直接推送到`master`分支，而不再进行版本更新。
+↑↑↑Multiple CEM knowledge-incorporated GLLMs simultaneously answering the CEM-related questions
 
----
+![GIF for running video of CEM knowledge-incorporated fine-tuned GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM%20knowledge-incorporated%20fine-tuned%20GLLMs.gif)
 
-## 目录
+↑↑↑Multiple CEM knowledge-incorporated fine-tuned GLLMs simultaneously answering the CEM-related questions
 
-* [介绍](README.md#介绍)
-* [解决的痛点](README.md#解决的痛点)
-* [快速上手](README.md#快速上手)
-    * [1. 环境配置](README.md#1-环境配置)
-    * [2. 模型下载](README.md#2-模型下载)
-    * [3. 初始化知识库和配置文件](README.md#3-初始化知识库和配置文件)
-    * [4. 一键启动](README.md#4-一键启动)
-    * [5. 启动界面示例](README.md#5-启动界面示例)
-* [联系我们](README.md#联系我们)
+![GIF for running video of CEM-QA prototype](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/GIF%20for%20running%20video%20of%20CEM-QA%20prototype.gif)
 
-## 介绍
+↑↑↑CEM-QA prototype answering the CEM-related question
 
-🤖️ 一种利用 [langchain](https://github.com/langchain-ai/langchain)
-思想实现的基于本地知识库的问答应用，目标期望建立一套对中文场景与开源模型支持友好、可离线运行的知识库问答解决方案。
 
-💡 受 [GanymedeNil](https://github.com/GanymedeNil) 的项目 [document.ai](https://github.com/GanymedeNil/document.ai)
-和 [AlexZhangji](https://github.com/AlexZhangji)
-创建的 [ChatGLM-6B Pull Request](https://github.com/THUDM/ChatGLM-6B/pull/216)
-启发，建立了全流程可使用开源模型实现的本地知识库问答应用。本项目的最新版本中通过使用 [FastChat](https://github.com/lm-sys/FastChat)
-接入 Vicuna, Alpaca, LLaMA, Koala, RWKV 等模型，依托于 [langchain](https://github.com/langchain-ai/langchain)
-框架支持通过基于 [FastAPI](https://github.com/tiangolo/fastapi) 提供的 API
-调用服务，或使用基于 [Streamlit](https://github.com/streamlit/streamlit) 的 WebUI 进行操作。
+# 1. General introduction of this repository
 
-✅ 依托于本项目支持的开源 LLM 与 Embedding 模型，本项目可实现全部使用**开源**模型**离线私有部署**。与此同时，本项目也支持
-OpenAI GPT API 的调用，并将在后续持续扩充对各类模型及模型 API 的接入。
+1.1 This repository aims at providing the codes and data regarding the paper entitled “……” for the public, and it is developed by University of XXX in UK and XXX University in China.
 
-⛓️ 本项目实现原理如下图所示，过程包括加载文件 -> 读取文本 -> 文本分割 -> 文本向量化 -> 问句向量化 ->
-在文本向量中匹配出与问句向量最相似的 `top k`个 -> 匹配出的文本作为上下文和问题一起添加到 `prompt`中 -> 提交给 `LLM`生成回答。
+1.2 We greatly appreciate the selfless spirits of these voluntary contributors of a series of open python libraries, including langchain, llamaindex, openai, chatglm, numpy, and so on. Our work stands on the shoulders of these giants.
 
-📺 [原理介绍视频](https://www.bilibili.com/video/BV13M4y1e7cN/?share_source=copy_web&vd_source=e6c5aafe684f30fbe41925d61ca6d514)
+1.3 As for anything regarding the copyright, please refer to the MIT License or contact the authors.
 
-![实现原理图](img/langchain+chatglm.png)
+# 2. Summary of supplemental materials in this repository
 
-从文档处理角度来看，实现流程如下：
+The table below shows all supplemental materials. All sheets in Tables S1, S2, S3, and S4 are arranged in the order shown in this table.
 
-![实现原理图2](img/langchain+chatglm2.png)
+![Inventory of supplemental materials](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Inventory%20of%20supplemental%20materials.png)
 
-🚩 本项目未涉及微调、训练过程，但可利用微调或训练对本项目效果进行优化。
+All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test dataset is also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM).
 
-🌐 [AutoDL 镜像](https://www.codewithgpu.com/i/chatchat-space/Langchain-Chatchat/Langchain-Chatchat) 中 `0.2.10`
+# 3. GLLM Leaderboard for CEM-QA
 
-版本所使用代码已更新至本项目 `v0.2.10` 版本。
+The test results of different GLLMs on the CEM-QA test dataset are shown below. Welcome global scholars to test their GLLM works on CEM-QA, please see the following specification of reusing the QA dataset.
 
-🐳 [Docker 镜像](isafetech/chatchat:0.2.10) 已经更新到 ```0.2.10``` 版本。
+| General-purpose large language models | Contributors | Average correctness ratio | SD1 | SD2 | SD3 | SD4 | SD5 | SD6 | SD7 | Ranking |
+|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| Knowledge-incorporated ERNIE-Bot 4.0 | Baidu & The authors | 0.734 | 0.787 | 0.758 | 0.640 | 0.766 | 0.784 | 0.754 | 0.808 | 1 |
+| Knowledge-incorporated fine-tuned Qwen-14B-Chat | Alibaba & The authors | 0.631 | 0.683 | 0.618 | 0.536 | 0.659 | 0.683 | 0.629 | 0.719 | 2 |
+| Knowledge-incorporated GPT-4 | OpenAI & The authors | 0.620 | 0.672 | 0.611 | 0.431 | 0.694 | 0.695 | 0.694 | 0.678 | 3 |
+| Original ERNIE-Bot 4.0 | Baidu | 0.608 | 0.661 | 0.632 | 0.507 | 0.656 | 0.648 | 0.632 | 0.622 | 4 |
+| Knowledge-incorporated Qwen-14B-Chat | Alibaba & The authors | 0.583 | 0.641 | 0.565 | 0.465 | 0.621 | 0.641 | 0.578 | 0.669 | 5 |
+| Original Qwen-14B-Chat | Alibaba | 0.522 | 0.583 | 0.512 | 0.393 | 0.565 | 0.548 | 0.521 | 0.594 | 6 |
+| Knowledge-incorporated fine-tuned Baichuan2-7B-Chat | Baichuan AI & The authors | 0.517 | 0.568 | 0.701 | 0.224 | 0.682 | 0.682 | 0.682 | 0.682 | 7 |
+| Knowledge-incorporated fine-tuned Qwen-7B-Chat | Alibaba & The authors | 0.517 | 0.574 | 0.538 | 0.410 | 0.567 | 0.575 | 0.514 | 0.597 | 8 |
+| Knowledge-incorporated fine-tuned Baichuan2-13B-Chat | Baichuan AI & The authors | 0.497 | 0.547 | 0.491 | 0.413 | 0.566 | 0.552 | 0.494 | 0.553 | 9 |
+| Original GPT-4 | OpenAI | 0.475 | 0.513 | 0.477 | 0.358 | 0.512 | 0.480 | 0.528 | 0.486 | 10 |
+| Knowledge-incorporated Qwen-7B-Chat | Alibaba & The authors | 0.468 | 0.529 | 0.448 | 0.364 | 0.515 | 0.514 | 0.467 | 0.542 | 11 |
+| Knowledge-incorporated fine-tuned GPT-3.5-turbo | OpenAI & The authors | 0.468 | 0.497 | 0.441 | 0.393 | 0.513 | 0.497 | 0.498 | 0.594 | 12 |
+| Knowledge-incorporated Baichuan2-7B-Chat | Baichuan AI & The authors | 0.444 | 0.484 | 0.474 | 0.366 | 0.495 | 0.474 | 0.417 | 0.489 | 13 |
+| Knowledge-incorporated Baichuan2-13B-Chat | Baichuan AI & The authors | 0.441 | 0.479 | 0.429 | 0.371 | 0.502 | 0.481 | 0.430 | 0.514 | 14 |
+| Knowledge-incorporated fine-tuned ERNIE-Bot-turbo | Baidu & The authors | 0.427 | 0.487 | 0.401 | 0.374 | 0.479 | 0.487 | 0.436 | 0.583 | 15 |
+| Knowledge-incorporated fine-tuned ChatGLM3-6B | Tsinghua & The authors | 0.425 | 0.482 | 0.406 | 0.353 | 0.471 | 0.487 | 0.422 | 0.472 | 16 |
+| Original Qwen-7B-Chat | Alibaba | 0.410 | 0.461 | 0.370 | 0.316 | 0.475 | 0.445 | 0.423 | 0.411 | 17 |
+| Knowledge-incorporated GPT-3.5-turbo | OpenAI & The authors | 0.407 | 0.458 | 0.395 | 0.356 | 0.438 | 0.456 | 0.422 | 0.447 | 18 |
+| Knowledge-incorporated ChatGLM3-6B | Tsinghua & The authors | 0.399 | 0.462 | 0.395 | 0.314 | 0.454 | 0.452 | 0.394 | 0.406 | 19 |
+| Original Baichuan2-13B-Chat | Baichuan AI | 0.393 | 0.443 | 0.408 | 0.323 | 0.447 | 0.443 | 0.378 | 0.456 | 20 |
+| Knowledge-incorporated ERNIE-Bot-turbo | Baidu & The authors | 0.392 | 0.424 | 0.386 | 0.351 | 0.432 | 0.418 | 0.394 | 0.467 | 21 |
+| Original Baichuan2-7B-Chat | Baichuan AI | 0.385 | 0.423 | 0.406 | 0.291 | 0.445 | 0.427 | 0.381 | 0.394 | 22 |
+| Original ChatGLM3-6B | Tsinghua | 0.353| 0.411 | 0.351 | 0.298 | 0.394 | 0.403 | 0.343 | 0.339 | 23 |
+| Original ERNIE-Bot-turbo | Baidu | 0.345 | 0.402 | 0.309 | 0.324 | 0.382 | 0.370 | 0.365 | 0.414 | 24 |
+| Original GPT-3.5-turbo | OpenAI | 0.340 | 0.400 | 0.334 | 0.304 | 0.421 | 0.345 | 0.362 | 0.389 | 25 |
 
-🌲 本次更新后同时支持DockerHub、阿里云、腾讯云镜像源：
+# 4. Reuse of the CEM-EKB with two optional versions
 
-```shell
-docker run -d --gpus all -p 80:8501 isafetech/chatchat:0.2.10
-docker run -d --gpus all -p 80:8501 ccr.ccs.tencentyun.com/chatchat/chatchat:0.2.10
-docker run -d --gpus all -p 80:8501 registry.cn-beijing.aliyuncs.com/chatchat/chatchat:0.2.10
-```
+![Two optional versions of CEM-EKB](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Two%20optional%20versions%20of%20CEM-EKB.png)
 
-🧩 本项目有一个非常完整的[Wiki](https://github.com/chatchat-space/Langchain-Chatchat/wiki/) ， README只是一个简单的介绍，_
-_仅仅是入门教程，能够基础运行__。
-如果你想要更深入的了解本项目，或者想对本项目做出贡献。请移步 [Wiki](https://github.com/chatchat-space/Langchain-Chatchat/wiki/)
-界面
+The CEM-EKB is available through this link (https://drive.google.com/drive/folders/1HL8hW_Co47fOPF_PnIogpBSo-REPQ1jc?usp=sharing).
 
-## 解决的痛点
 
-该项目是一个可以实现 __完全本地化__推理的知识库增强方案, 重点解决数据安全保护，私域化部署的企业痛点。
-本开源方案采用```Apache License```，可以免费商用，无需付费。
+# 5. Reuse of the CEM-QA test and training datasets
 
-我们支持市面上主流的本地大语言模型和Embedding模型，支持开源的本地向量数据库。
-支持列表详见[Wiki](https://github.com/chatchat-space/Langchain-Chatchat/wiki/)
+The CEM-QA test dataset containing 5,050 questions is manually annotated with four features, including the question source, single-answer multiple-choice question (SAMCQ) or multiple-answer multiple-choice question (MAMCQ), and calculation question or non-calculation question.
 
-## 快速上手
 
-### 1. 环境配置
+![CEM-QA test dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20test%20dataset%20in%20the%20Hugging%20Face%20repository.png)
+↑↑↑The CEM-QA test dataset in the Hugging Face repository
 
-+ 首先，确保你的机器安装了 Python 3.8 - 3.11 (我们强烈推荐使用 Python3.11)。
 
-```
-$ python --version
-Python 3.11.7
-```
+![CEM-QA training dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20training%20dataset%20in%20the%20Hugging%20Face%20repository.png)
+↑↑↑The CEM-QA training dataset in the Hugging Face repository
 
-接着，创建一个虚拟环境，并在虚拟环境内安装项目的依赖
+More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM)( https://huggingface.co/datasets/AnonymousSite/QA_training_dataset_for_CEM).
 
-```shell
+# 6. Reuse of the codes for running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
+ 
+## 6.1 Environment set
 
-# 拉取仓库
-$ git clone https://github.com/chatchat-space/Langchain-Chatchat.git
+All codes are developed on Python 3.10, and the IDE adopted is PyCharm (Professional version). The codes also support GPU computing for higher speed; the Navida CUDA we adopted is V10.0.130. The GIS platform is Arcgis Pro 2.3, and its license is necessary. 
 
-# 进入目录
-$ cd Langchain-Chatchat
+aiohttp==3.9.0
 
-# 安装全部依赖
-$ pip install -r requirements.txt 
-$ pip install -r requirements_api.txt
-$ pip install -r requirements_webui.txt  
+aiolimiter==1.1.0
 
-# 默认依赖包括基本运行环境（FAISS向量库）。如果要使用 milvus/pg_vector 等向量库，请将 requirements.txt 中相应依赖取消注释再安装。
-```
+aiosignal==1.3.1
 
-请注意，LangChain-Chatchat `0.2.x` 系列是针对 Langchain `0.0.x` 系列版本的，如果你使用的是 Langchain `0.1.x`
-系列版本，需要降级您的`Langchain`版本。
+aiostream==0.5.2
 
-### 2， 模型下载
+annotated-types==0.6.0
 
-如需在本地或离线环境下运行本项目，需要首先将项目所需的模型下载至本地，通常开源 LLM 与 Embedding
-模型可以从 [HuggingFace](https://huggingface.co/models) 下载。
+anyio==3.7.1
 
-以本项目中默认使用的 LLM 模型 [THUDM/ChatGLM3-6B](https://huggingface.co/THUDM/chatglm3-6b) 与 Embedding
-模型 [BAAI/bge-large-zh](https://huggingface.co/BAAI/bge-large-zh) 为例：
+Appium-Python-Client==3.1.0
 
-下载模型需要先[安装 Git LFS](https://docs.github.com/zh/repositories/working-with-files/managing-large-files/installing-git-large-file-storage)
-，然后运行
+async-timeout==4.0.3
 
-```Shell
-$ git lfs install
-$ git clone https://huggingface.co/THUDM/chatglm3-6b
-$ git clone https://huggingface.co/BAAI/bge-large-zh
-```
+attrs==23.1.0
 
-### 3. 初始化知识库和配置文件
+backoff==2.2.1
 
-按照下列方式初始化自己的知识库和简单的复制配置文件
+bce-python-sdk==0.8.96
 
-```shell
-$ python copy_config_example.py
-$ python init_database.py --recreate-vs
- ```
+bcrypt==4.0.1
 
-### 4. 一键启动
+beautifulsoup4==4.12.2
 
-按照以下命令启动项目
+......
 
-```shell
-$ python startup.py -a
-```
+Please refer to the supplementary materials for the complete requirement file.(https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Codes/Codes%20for%20running%20CEM%20knowledge-incorporated%20GLLMs/requirements.txt)
 
-### 5. 启动界面示例
+Before submitting these codes to Github, all of them have been tested to be well-performed (as shown in the images). Even so, we are not able to guarantee their operation in other computing environments due to the differences in the Python version, computer operating system, and adopted hardware.
 
-如果正常启动，你将能看到以下界面
+## 6.2 Codes for testing the GLLMs
 
-1. FastAPI Docs 界面
+Closed-source GLLMs are API-only, and open-source GLLMs are deployed directly on the AutoDL Cloud server.
 
-![](img/fastapi_docs_026.png)
 
-2. Web UI 启动界面示例：
+![Codes for running original GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20original%20GLLMs.png)
+↑↑↑Codes for testing original GLLMs
 
-- Web UI 对话界面：
 
-![img](img/LLM_success.png)
+![Codes for running CEM knowledge-incorporated GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20CEM%20knowledge-incorporated%20GLLMs.png)
+↑↑↑Codes for testing CEM knowledge-incorporated GLLMs
 
-- Web UI 知识库管理页面：
 
-![](img/init_knowledge_base.jpg)
+![Codes for running CEM knowledge-incorporated fine-tuned GLLMs](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20running%20CEM%20knowledge-incorporated%20fine-tuned%20GLLMs.png)
+↑↑↑Codes for testing CEM knowledge-incorporated fine-tuned GLLMs
 
-### 注意
 
-以上方式只是为了快速上手，如果需要更多的功能和自定义启动方式
-，请参考[Wiki](https://github.com/chatchat-space/Langchain-Chatchat/wiki/)
-
-
----
-
-## 项目里程碑
-
-+ `2023年4月`: `Langchain-ChatGLM 0.1.0` 发布，支持基于 ChatGLM-6B 模型的本地知识库问答。
-+ `2023年8月`: `Langchain-ChatGLM` 改名为 `Langchain-Chatchat`，`0.2.0` 发布，使用 `fastchat` 作为模型加载方案，支持更多的模型和数据库。
-+ `2023年10月`: `Langchain-Chatchat 0.2.5` 发布，推出 Agent 内容，开源项目在`Founder Park & Zhipu AI & Zilliz`
-  举办的黑客马拉松获得三等奖。
-+ `2023年12月`: `Langchain-Chatchat` 开源项目获得超过 **20K** stars.
-+ `2024年1月`: `LangChain 0.1.x` 推出，`Langchain-Chatchat 0.2.x` 发布稳定版本`0.2.10`
-  后将停止更新和技术支持，全力研发具有更强应用性的 `Langchain-Chatchat 0.3.x`。
-
-+ 🔥 让我们一起期待未来 Chatchat 的故事 ···
-
----
-
-## 联系我们
-
-### Telegram
-
-[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white "langchain-chatglm")](https://t.me/+RjliQ3jnJ1YyN2E9)
-
-### 项目交流群
-<img src="img/qr_code_104.jpg" alt="二维码" width="300" />
-
-🎉 Langchain-Chatchat 项目微信交流群，如果你也对本项目感兴趣，欢迎加入群聊参与讨论交流。
-
-### 公众号
-
-<img src="img/official_wechat_mp_account.png" alt="二维码" width="300" />
-
-🎉 Langchain-Chatchat 项目官方公众号，欢迎扫码关注。
+![Codes for deploying and running CEM-QA prototype](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20deploying%20and%20running%20the%20CEM-QA%20%20prototype.png)
+↑↑↑Codes for deploying and running CEM-QA prototype
