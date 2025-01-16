@@ -30,15 +30,15 @@
 
 # 2. Summary of supplemental materials in this repository
 
-The table below shows all supplemental materials. All sheets in Tables S1, S2, S3, and S4 are arranged in the order shown in this table.
+The table below shows all supplemental materials. All sheets in Tables S1-S7 are arranged in the order shown in this table.
 
 ![Inventory of supplemental materials](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Inventory%20of%20supplemental%20materials.png)
 
-All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test dataset is also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs) and (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs).
+All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test datasets are also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs) and (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs).
 
 # 3. GLLM Leaderboard for CEM-QA
 
-The test results of different GLLMs on the CEM-QA test dataset are shown below. Welcome global scholars to test their GLLM works on CEM-QA, please see the following specification of reusing the QA dataset.
+The test results of different GLLMs on the 5,050-question CEM-QA test dataset are shown below. Welcome global scholars to test their GLLM works on CEM-QA, please see the following specification of reusing the QA dataset.
 
 | General-purpose large language models | Contributors | Average correctness ratio | SD1 | SD2 | SD3 | SD4 | SD5 | SD6 | SD7 | Ranking |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
@@ -81,13 +81,14 @@ The CEM-QA test datasets contain 5,050 multiple-choice questions (MCQs) and 100 
 
 
 ![CEM-QA test dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20test%20dataset%20in%20the%20Hugging%20Face%20repository.png)
+![CBQ dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CBQ%20dataset%20in%20the%20Hugging%20Face%20repository.tif)
 ↑↑↑The CEM-QA test datasets in the Hugging Face repository
 
 
 ![CEM-QA training dataset in the Hugging Face repository](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/CEM-QA%20training%20dataset%20in%20the%20Hugging%20Face%20repository.png)
 ↑↑↑The CEM-QA training dataset in the Hugging Face repository
 
-More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs),  (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs), and .
+More information about the datasets can be found through these links (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs) and  (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs).
 
 # 6. Reuse of the codes for running original GLLMs, CEM knowledge-incorporated GLLMs, CEM knowledge-incorporated fine-tuned GLLMs, and CEM-QA prototype
  
