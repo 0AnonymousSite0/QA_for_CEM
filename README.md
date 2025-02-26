@@ -156,3 +156,4 @@ Codes for deploying and running CEM-QA prototype is available through this link 
 
 
 ![Codes for identifying candidate document entities](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Codes%20for%20identifying%20candidate%20document%20entities.png)
+↑↑↑Codes for identifying candidate document entities
