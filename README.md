@@ -36,7 +36,6 @@
 The table below shows all supplemental materials. All sheets in Tables S1-S7 are arranged in the order shown in this table.
 
 ![Inventory of supplemental materials](https://github.com/0AnonymousSite0/QA_for_CEM/blob/main/Images%20for%20readme/Inventory%20of%20supplemental%20materials.png)
-
 All supplemental materials are provided in Github repository (https://github.com/0AnonymousSite0/QA_for_CEM). Besides the GitHub repository, the CEM-QA test datasets are also shared in the Hugging Face repository (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_MCQs) and (https://huggingface.co/datasets/AnonymousSite/QA_test_dataset_for_CEM_CBQs).
 
 # 3. GLLM Leaderboard for CEM-QA
